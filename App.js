@@ -1,16 +1,21 @@
-import { StyleSheet, SafeAreaView, Alert, Button, Platform, StatusBar } from 'react-native';
+import { StyleSheet, SafeAreaView, Alert, Button, Platform, StatusBar, View, Dimensions } from 'react-native';
+import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
 export default function App() {
+
+  console.log(useDeviceOrientation)
   return (
-    <SafeAreaView style={[styles.container, containerStyle]}>
-      <Button
-        color="orange"
-        title="Click Me" onPress={() => Alert.prompt("My Title", "My message", text => console.log(text))} />
+    <SafeAreaView style={styles.container}>
+      <View style={{
+        backgroundColor: 'dodgerblue',
+        width: '100%',
+        height: "30%"
+      }}>
+
+      </View>
     </SafeAreaView>
   );
 }
-
-const containerStyle = { backgroundColor: "orange" }
 
 const styles = StyleSheet.create({
   container: {
